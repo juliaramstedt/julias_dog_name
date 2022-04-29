@@ -1,1 +1,10 @@
-<li><%= name.name %></li>
+<li style="display:flex; padding: 5px;">
+  <%= name.name %>
+  <span style="margin: 0 10px;">
+    <%= name.votes %>
+  </span>
+  <%= form_with model: name do |form| %>
+    <%= button_tag "+", value: "add", style: "padding: 2px;" if cookies[:votes].to_i > 0 %>
+    <%= button_tag "-", value: "subtract", style: "padding: 2px;" if name.votes > 0 %>
+  <% end %>
+</li>

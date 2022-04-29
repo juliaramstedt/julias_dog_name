@@ -1,12 +1,14 @@
 <div style="display:flex; flex-direction:column;">
   <h1>Namnförslag</h1>
 
+  <%= "Antal röster #{cookies[:votes]}" %>
+
   <ul>
     <%= render @names %>
   </ul>
 
   <%= form_with model: @name, remote: false do |form| %>
     <%= form.text_field :name, autocomplete: false %>
-    <%= form.submit "Add name" %>
+    <%= form.submit "Lägg till förslag" %>
   <% end %>
 </div>

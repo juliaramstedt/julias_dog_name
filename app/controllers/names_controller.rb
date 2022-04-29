@@ -2,7 +2,7 @@
 
 class NamesController < ApplicationController
   def index
-    @names = Name.all
+    @names = Name.all.order(:name)
     @name = Name.new
   end
 
@@ -16,7 +16,25 @@ class NamesController < ApplicationController
     end
   end
 
+  def update
+    @name = Name.find(params[:id])
+    if params["button"] == "add"
+      @name.votes += 1 
+      cookies[:votes] = cookies[:votes].to_i - 1
+    end
+
+    if params["button"] == "subtract" && @name.votes > 0
+      @name.votes -= 1
+      cookies[:votes] = cookies[:votes].to_i + 1
+    end
+
+    @name.save!
+
+    redirect_to names_path
+  end
+
   private
+
 
   def name_params
     params.require(:name).permit(:name)
