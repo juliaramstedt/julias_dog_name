@@ -1,0 +1,38 @@
+Arguments: 
+  /Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/bin/node /Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/.npm/bin/yarn build:css
+
+PATH: 
+  /Users/juliaramstedt/.asdf/plugins/nodejs/shims:/Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/.npm/bin:/Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/bin:/Users/juliaramstedt/.asdf/shims:/Users/juliaramstedt/.asdf/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/juliaramstedt/Projects/julias_dog_name/package.json: Unexpected token } in JSON at position 305
+      at JSON.parse (<anonymous>)
+      at /Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/.npm/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/.npm/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/juliaramstedt/.asdf/installs/nodejs/16.13.1/.npm/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "app",
+    "private": "true",
+    "scripts": {
+      "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+      "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules" }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
