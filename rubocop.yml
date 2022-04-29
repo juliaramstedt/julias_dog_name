@@ -1,0 +1,67 @@
+require: rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0
+  Exclude:
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "bin/*"
+    - "**/tmp/**/*"
+    - "**/templates/**/*"
+    - "**/vendor/**/*"
+    - "actionpack/lib/action_dispatch/journey/parser.rb"
+    - "actionmailbox/test/dummy/**/*"
+    - "actiontext/test/dummy/**/*"
+    - "**/node_modules/**/*"
+    - "**/*/*_pb.rb"
+  NewCops: "enable"
+
+Metrics/AbcSize:
+  Exclude:
+    - "test/**/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/routes.rb"
+    - "config/environments/*"
+    - "test/**/*"
+
+Metrics/ClassLength:
+  Max: 300
+  Exclude:
+    - "test/**/*"
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "app/factories/**/*.rb"
+    - "db/seeds/**/*.rb"
+
+Metrics/MethodLength:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - "bin/setup"
+    - "bin/update"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/ClassAndModuleChildren:
+  Enabled: true
+
+Style/RegexpLiteral:
+  EnforcedStyle: percent_r
+
+Style/AndOr:
+  EnforcedStyle: always
